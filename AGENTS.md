@@ -31,7 +31,11 @@ Guidance for coding agents working on this example client, or on a mod copied fr
 - **Config**: shipped defaults in `config.default.json`; secrets only in the untracked
   `config.json`.
 - **Voice is optional**: text first; on any voice failure keep the subtitle or let the
-  player type, and say so. Never report voice success without a WAV file.
+  player type, and say so. Never report voice success without a WAV file. If the user
+  wants voice, start with PocketTTS for TTS and Parakeet for STT (the recommended
+  DwemerDistro choices) before the supported alternatives. Do not assume they are installed
+  or running: within the scope the user has authorized, verify the services are available
+  and running before enabling or testing voice, then verify them on the server.
 - **Third-party code**: keep `third_party/nlohmann/LICENSE.MIT`. Do not edit `json.hpp`.
 
 ## Checks before finishing

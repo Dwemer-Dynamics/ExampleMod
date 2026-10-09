@@ -35,7 +35,10 @@ Work in this order and stop to show me the result after each step:
 4. Implement the game adapter. Write a new GameAdapter for my engine using only the
    engine's real APIs. Call GameAdapter only from the game's main thread, keep network
    calls on worker threads, keep the request_id stale check and the action allowlist.
-   Implement follow_player with the engine's own follow behaviour. Keep voice optional.
+   Implement follow_player with the engine's own follow behaviour. Keep voice optional
+   and text first. If I want voice, start with PocketTTS for text-to-speech and Parakeet
+   for speech-to-text; within the scope I have authorized, verify they are available
+   and running before enabling or testing voice instead of assuming.
    Do not invent SDK functions: if an API is unknown, leave a clearly marked TODO and
    tell me.
 
@@ -90,14 +93,15 @@ older server without a `baseline`.
 | ExampleServer (Apache in DwemerDistro) | `http://127.0.0.1:19000/ExampleServer` | Yes |
 | PostgreSQL in DwemerDistro | `localhost:5432`, database `example_ai_mod` | Yes |
 | LLM: OpenAI, OpenRouter, local OpenAI-compatible or DwemerDistro LLM Studio (`127.0.0.1:1234`) | `llm.mode` in `config/config.php`, see ExampleServer/CONNECTORS.md | No (mock otherwise) |
-| TTS: PocketTTS (audio.cpp), default | `http://127.0.0.1:8086/v1/audio/speech`, off until enabled | No |
-| STT: Parakeet, default | `http://127.0.0.1:8022/v1/audio/transcriptions`, off until enabled | No |
+| TTS: PocketTTS (audio.cpp), default and recommended start | `http://127.0.0.1:8086/v1/audio/speech`, off until enabled | No |
+| STT: Parakeet, default and recommended start | `http://127.0.0.1:8022/v1/audio/transcriptions`, off until enabled | No |
 | STT: faster-whisper, supported alternative | `http://127.0.0.1:9876/api/v0/transcribe` | No |
 | NPC selection (`decision.php`, mock or OpenRouter decisions) | off | No; selection only, never actions |
 
 All URLs are configurable; provider settings are in
 [ExampleServer/CONNECTORS.md](https://github.com/Dwemer-Dynamics/ExampleServer/blob/main/CONNECTORS.md). None of these are installed or
-started by the example; start them from the DwemerDistro launcher or your own setup.
+started by the example; check them in the DwemerDistro launcher or your own setup,
+install any that are missing, and start them before enabling or testing.
 
 The companion [ExampleServer/MAKE_IT_YOURS.md](https://github.com/Dwemer-Dynamics/ExampleServer/blob/main/MAKE_IT_YOURS.md) maps the
 source files to customize. [ExampleServer/WAVE_ACTION.md](https://github.com/Dwemer-Dynamics/ExampleServer/blob/main/WAVE_ACTION.md) is a

@@ -170,9 +170,11 @@ NPC it talks to and runs no actions. Server settings are in ExampleServer `CONNE
 ## Voice examples
 
 Voice is off on both sides by default. The server must have `tts`/`stt` enabled and its
-voice services running: PocketTTS (audio.cpp) for speech, and Parakeet (default) or
-faster-whisper for transcription. They are started from the DwemerDistro launcher and set
-up as described in [CONNECTORS.md](https://github.com/Dwemer-Dynamics/ExampleServer/blob/main/CONNECTORS.md#voice). The client needs
+voice services running. Start with PocketTTS (audio.cpp) for text-to-speech and Parakeet
+(default) for speech-to-text, the recommended DwemerDistro starting choices; faster-whisper
+remains a supported transcription alternative. Existing setups often have them already:
+check each in the DwemerDistro launcher, install it there if missing, and start it before
+enabling or testing. Set them up as described in [CONNECTORS.md](https://github.com/Dwemer-Dynamics/ExampleServer/blob/main/CONNECTORS.md#voice). The client needs
 `"voice_enabled": true` only for replies spoken as WAV; `--listen` works without it.
 
 | Command | Expect |
