@@ -3,7 +3,7 @@
 The game (client) talks to the server over plain HTTP with JSON. This file is the
 contract between ExampleMod and ExampleServer; it is identical in both repos.
 
-- Base URL, default for a DwemerDistro install: `http://127.0.0.1:8081/ExampleServer`
+- Base URL, default for a DwemerDistro install: `http://127.0.0.1:19000/ExampleServer`
 - Every request except `health.php` needs `Authorization: Bearer <token>`.
   The token is in the server's `config/config.php`.
 - Every JSON request and reply has `"protocol": 1`. The server refuses other versions.
@@ -355,7 +355,7 @@ server's error log, its Logs page and its Connector calls page.
 
 ```bash
 TOKEN=...   # from config/config.php
-BASE=http://127.0.0.1:8081/ExampleServer
+BASE=http://127.0.0.1:19000/ExampleServer
 curl -s $BASE/health.php
 curl -s -H "Authorization: Bearer $TOKEN" --data \
   '{"protocol":1,"request_id":"req-curl-0001","session_id":"s1","npc":{"id":"npc_guide","name":"Guide"},"player":{"name":"Traveler"},"text":"follow me"}' \
