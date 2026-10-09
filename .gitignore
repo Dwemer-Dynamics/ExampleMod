@@ -1,0 +1,5 @@
+# Private settings with the server token.
+config.json
+# Build output belongs outside the source tree, but ignore stray local builds.
+build/
+out/

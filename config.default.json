@@ -1,0 +1,8 @@
+{
+  "server_url": "http://127.0.0.1:8081/ExampleServer",
+  "token": "",
+  "session_id": "demo-save-1",
+  "timeout_seconds": 40,
+  "voice_enabled": false,
+  "allowed_actions": ["follow_player"]
+}
