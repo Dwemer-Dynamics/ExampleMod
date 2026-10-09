@@ -87,7 +87,7 @@ older server without a `baseline`.
 
 | Service | Default | Required |
 |---|---|---|
-| ExampleServer (Apache in DwemerDistro) | `http://127.0.0.1:8081/ExampleServer` | Yes |
+| ExampleServer (Apache in DwemerDistro) | `http://127.0.0.1:19000/ExampleServer` | Yes |
 | PostgreSQL in DwemerDistro | `localhost:5432`, database `example_ai_mod` | Yes |
 | LLM: OpenAI, OpenRouter, local OpenAI-compatible or DwemerDistro LLM Studio (`127.0.0.1:1234`) | `llm.mode` in `config/config.php`, see ExampleServer/CONNECTORS.md | No (mock otherwise) |
 | TTS: PocketTTS (audio.cpp), default | `http://127.0.0.1:8086/v1/audio/speech`, off until enabled | No |

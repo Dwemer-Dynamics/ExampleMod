@@ -91,7 +91,7 @@ with `--config <file>`) overrides any key it sets.
 
 | Key | Default | Meaning |
 |---|---|---|
-| `server_url` | `http://127.0.0.1:8081/ExampleServer` | Where the server is. |
+| `server_url` | `http://127.0.0.1:19000/ExampleServer` | Where the server is. A launcher install is `http://127.0.0.1:19000/custom-mods/example-server`. 19000 is DwemerDistro's shared custom mods port (`CUSTOM_MODS_PORT`); if it is changed (then `sudo ddistro_custom_mod setup-web`), update this URL too. |
 | `token` | empty | Required. From the server's `config/config.php`. |
 | `session_id` | `demo-save-1` | Keeps NPC history apart, e.g. one per save game. |
 | `timeout_seconds` | `40` | HTTP timeout per phase (connect, send, waiting for the reply headers, each read), 1-300. WinHTTP checks it coarsely (a 1 second setting fired after about 2-4 seconds in tests), so a call can block longer; any reply that completes after `timeout_seconds` is discarded with an error, never applied. A timed-out turn is never retried. |

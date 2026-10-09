@@ -7,7 +7,7 @@
 #include <vector>
 
 struct Config {
-    std::string serverUrl = "http://127.0.0.1:8081/ExampleServer";
+    std::string serverUrl = "http://127.0.0.1:19000/ExampleServer";
     std::string token;
     std::string sessionId = "demo-save-1";
     int timeoutSeconds = 40;
